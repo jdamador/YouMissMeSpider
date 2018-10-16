@@ -1,14 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/******************************************************************************\
+ * Logic paradigm implementation in Java
+ * Author: Daniel Amador Salas
+ * Version: 1.0
+ * Date: October 16th
+\******************************************************************************/
 package app.model;
+import javax.swing.JButton;
 
-/**
- *
- * @author jushuu
- */
-public class Cell {
-    
+public class Cell extends JButton{
+   public boolean allow = true;
+   public Cell(){
+       
+   }
 }
