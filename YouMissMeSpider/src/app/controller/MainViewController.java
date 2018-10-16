@@ -6,6 +6,46 @@
 \******************************************************************************/
 package app.controller;
 
-public class MainViewController {
+import app.view.MainView;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import jdk.nashorn.internal.runtime.regexp.joni.Config;
+
+public class MainViewController implements ActionListener{
+    private MainView mainView;
+    
+    public MainViewController(MainView mainView) {
+        this.mainView=mainView;
+        addActionListener();
+    }
+    /**************************************************************************\
+     * Add Action Listener
+    \**************************************************************************/
+    public void addActionListener(){
+        mainView.btnCreateMaze.addActionListener(this);
+        mainView.btnStartGame.addActionListener(this);
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        JButton btnPressed = (JButton) e.getSource();
+        if(btnPressed.getText().equals("Create Maze"))
+            openCreateMaze();
+        else
+            openGame();
+    }
+    /**************************************************************************\
+     * Open Create Maze View
+    \**************************************************************************/
+    private void openCreateMaze() {
+        ConfigController mazeController= new ConfigController(mainView);
+    }
+    /**************************************************************************\
+     * Open Game View
+    \**************************************************************************/
+    private void openGame() {
+        GameController gameController= new GameController(mainView);
+    }
+
     
 }

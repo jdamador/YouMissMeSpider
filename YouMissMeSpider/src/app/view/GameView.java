@@ -9,7 +9,7 @@ package app.view;
 public class GameView extends javax.swing.JFrame {
 
     /**
-     * Creates new form GameView
+     * Creates new form ConfigView
      */
     public GameView() {
         initComponents();
@@ -65,6 +65,13 @@ public class GameView extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(GameView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

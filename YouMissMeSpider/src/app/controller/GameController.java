@@ -6,6 +6,12 @@
 \******************************************************************************/
 package app.controller;
 
+import app.view.MainView;
+
 public class GameController {
+
+    GameController(MainView mainView) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

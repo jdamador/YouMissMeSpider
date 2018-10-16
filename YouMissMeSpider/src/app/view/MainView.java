@@ -6,13 +6,18 @@
 \******************************************************************************/
 package app.view;
 
-public class MainView extends javax.swing.JFrame {
+import app.controller.MainViewController;
+import app.model.Cell;
 
+public class MainView extends javax.swing.JFrame {
+    private MainViewController mvController;
+    public Cell[][] maze = new Cell[8][8];
     /**
      * Creates new form MainView
      */
     public MainView() {
         initComponents();
+        mvController = new MainViewController(this);
     }
 
     /**
@@ -24,18 +29,44 @@ public class MainView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        lblTitle = new javax.swing.JLabel();
+        btnCreateMaze = new javax.swing.JButton();
+        btnStartGame = new javax.swing.JButton();
+        lblBackground = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("MainView");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        setLocation(new java.awt.Point(0, 0));
+        setMaximumSize(new java.awt.Dimension(1280, 720));
+        setMinimumSize(new java.awt.Dimension(1280, 720));
+        setSize(new java.awt.Dimension(1280, 720));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblTitle.setFont(new java.awt.Font("Phetsarath OT", 1, 52)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(254, 254, 254));
+        lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/util/MainViewTitle.png"))); // NOI18N
+        lblTitle.setToolTipText("");
+        getContentPane().add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -80, -1, -1));
+
+        btnCreateMaze.setBackground(new java.awt.Color(30, 41, 31));
+        btnCreateMaze.setFont(new java.awt.Font("Ubuntu", 1, 36)); // NOI18N
+        btnCreateMaze.setForeground(new java.awt.Color(254, 254, 254));
+        btnCreateMaze.setText("Create Maze");
+        btnCreateMaze.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(btnCreateMaze, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 570, 320, 120));
+
+        btnStartGame.setBackground(new java.awt.Color(30, 41, 31));
+        btnStartGame.setFont(new java.awt.Font("Ubuntu", 1, 36)); // NOI18N
+        btnStartGame.setForeground(new java.awt.Color(254, 254, 254));
+        btnStartGame.setText("Start Game");
+        btnStartGame.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(btnStartGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 440, 320, 120));
+
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/util/MainViewBackground.jpg"))); // NOI18N
+        lblBackground.setMaximumSize(new java.awt.Dimension(1280, 720));
+        lblBackground.setMinimumSize(new java.awt.Dimension(1280, 720));
+        getContentPane().add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 720));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -76,5 +107,9 @@ public class MainView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnCreateMaze;
+    public javax.swing.JButton btnStartGame;
+    private javax.swing.JLabel lblBackground;
+    private javax.swing.JLabel lblTitle;
     // End of variables declaration//GEN-END:variables
 }
