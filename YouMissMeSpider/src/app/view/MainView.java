@@ -11,7 +11,7 @@ import app.model.Cell;
 
 public class MainView extends javax.swing.JFrame {
     private MainViewController mvController;
-    public Cell[][] maze = new Cell[8][8];
+    public Cell[][] maze;
     public Cell wasp = null;
     public Cell spider = null;
     /**
@@ -40,7 +40,6 @@ public class MainView extends javax.swing.JFrame {
         setTitle("MainView");
         setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
         setLocation(new java.awt.Point(0, 0));
-        setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
         setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -51,14 +50,14 @@ public class MainView extends javax.swing.JFrame {
         lblTitle.setToolTipText("");
         getContentPane().add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -80, -1, -1));
 
-        btnCreateMaze.setBackground(new java.awt.Color(30, 41, 31));
+        btnCreateMaze.setBackground(new java.awt.Color(0, 153, 153));
         btnCreateMaze.setFont(new java.awt.Font("Ubuntu", 1, 36)); // NOI18N
         btnCreateMaze.setForeground(new java.awt.Color(254, 254, 254));
         btnCreateMaze.setText("Create Maze");
         btnCreateMaze.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(btnCreateMaze, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 570, 320, 120));
 
-        btnStartGame.setBackground(new java.awt.Color(30, 41, 31));
+        btnStartGame.setBackground(new java.awt.Color(0, 153, 153));
         btnStartGame.setFont(new java.awt.Font("Ubuntu", 1, 36)); // NOI18N
         btnStartGame.setForeground(new java.awt.Color(254, 254, 254));
         btnStartGame.setText("Start Game");

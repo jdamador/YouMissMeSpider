@@ -9,6 +9,7 @@ import javax.swing.JButton;
 
 public class Cell extends JButton{
    public boolean allow = true;
+   public String name;
    public Cell(){
        
    }

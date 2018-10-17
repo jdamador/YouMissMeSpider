@@ -24,20 +24,52 @@ public class GameView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        pnMaze = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        btnStartGame = new javax.swing.JButton();
+        btnChange = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("GameView");
+        setMinimumSize(new java.awt.Dimension(1280, 720));
+        setResizable(false);
+        setSize(new java.awt.Dimension(1280, 720));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pnMaze.setMaximumSize(new java.awt.Dimension(460, 460));
+        pnMaze.setMinimumSize(new java.awt.Dimension(460, 460));
+        pnMaze.setPreferredSize(new java.awt.Dimension(460, 460));
+        pnMaze.setLayout(new java.awt.GridLayout(8, 8));
+        getContentPane().add(pnMaze, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 120, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/util/MainViewTitle.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, 80));
+
+        btnStartGame.setBackground(new java.awt.Color(0, 153, 153));
+        btnStartGame.setFont(new java.awt.Font("Hack", 1, 24)); // NOI18N
+        btnStartGame.setForeground(new java.awt.Color(255, 255, 255));
+        btnStartGame.setText("Start Game");
+        getContentPane().add(btnStartGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 230, 40));
+
+        btnChange.setBackground(new java.awt.Color(0, 153, 153));
+        btnChange.setFont(new java.awt.Font("Hack", 1, 24)); // NOI18N
+        btnChange.setForeground(new java.awt.Color(255, 255, 255));
+        btnChange.setText("Change Target");
+        getContentPane().add(btnChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 230, 40));
+
+        btnBack.setBackground(new java.awt.Color(0, 153, 153));
+        btnBack.setFont(new java.awt.Font("Hack", 1, 24)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("Back");
+        getContentPane().add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 230, 40));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/util/GameBackground.jpg"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 710));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -83,5 +115,11 @@ public class GameView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnBack;
+    public javax.swing.JButton btnChange;
+    public javax.swing.JButton btnStartGame;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    public javax.swing.JPanel pnMaze;
     // End of variables declaration//GEN-END:variables
 }

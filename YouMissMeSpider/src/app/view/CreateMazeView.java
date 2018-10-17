@@ -33,6 +33,7 @@ public class CreateMazeView extends javax.swing.JFrame {
         rbnAddWasp = new javax.swing.JRadioButton();
         rbnAddSpider = new javax.swing.JRadioButton();
         rbnAddStone = new javax.swing.JRadioButton();
+        btnBack = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,8 +47,10 @@ public class CreateMazeView extends javax.swing.JFrame {
         pnMaze.setLayout(new java.awt.GridLayout(8, 8));
         getContentPane().add(pnMaze, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, 490, 490));
 
-        jLabel3.setText("jLabel3");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, -1, -1));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Instrucciones");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -88,6 +91,12 @@ public class CreateMazeView extends javax.swing.JFrame {
         jPanel1.add(rbnAddStone, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 160, 170, -1));
+
+        btnBack.setBackground(new java.awt.Color(0, 153, 153));
+        btnBack.setFont(new java.awt.Font("Hack", 1, 24)); // NOI18N
+        btnBack.setText("Back");
+        btnBack.setToolTipText("");
+        getContentPane().add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 320, 170, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/util/CreateMazeBackground.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
@@ -144,6 +153,7 @@ public class CreateMazeView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup btgEditOptions;
+    public javax.swing.JButton btnBack;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

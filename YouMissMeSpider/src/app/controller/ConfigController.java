@@ -11,8 +11,6 @@ import app.view.CreateMazeView;
 import app.view.MainView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
@@ -23,6 +21,7 @@ public class ConfigController implements ActionListener {
         this.mainView=mainView;
         generateMatrix();
         openCreateMaze();
+        createMaze.btnBack.addActionListener(this);
     }
 
     private void openCreateMaze() {
@@ -31,21 +30,21 @@ public class ConfigController implements ActionListener {
     }
 
     private void generateMatrix() {
+        int name=0;
         mainView.maze=new Cell[8][8];
         mainView.wasp=null;
         mainView.spider=null;
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 mainView.maze[i][j] = new Cell();
+                mainView.maze[i][j].name="Cell"+name;name++;
                 mainView.maze[i][j].setIcon(new ImageIcon("./src/app/util/wood.jpg"));
-                mainView.maze[i][j].addActionListener(this);
+                mainView.maze[i][j].addActionListener((e) -> this.cellPressed(e));
                 createMaze.pnMaze.add(mainView.maze[i][j]);
             }
         }
     }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
+    public void cellPressed(ActionEvent e) {
         Cell btnPussed = (Cell) e.getSource();
         if(createMaze.rbnAddFloor.isSelected()){
             if(btnPussed.equals(mainView.wasp))
@@ -76,4 +75,17 @@ public class ConfigController implements ActionListener {
             }
         }
     }  
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        JButton btnPussed = (JButton) e.getSource();
+        if(btnPussed.getText().equals("Back"))
+            goBack();
+    }
+
+    private void goBack() {
+         mainView.setVisible(true);
+      createMaze.setVisible(false);
+    }
+         
 }
