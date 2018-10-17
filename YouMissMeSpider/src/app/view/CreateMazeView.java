@@ -26,10 +26,13 @@ public class CreateMazeView extends javax.swing.JFrame {
 
         btgEditOptions = new javax.swing.ButtonGroup();
         jLabel2 = new javax.swing.JLabel();
-        rbnAddTargets = new javax.swing.JRadioButton();
-        rbnAddBlocks = new javax.swing.JRadioButton();
         pnMaze = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        rbnAddFloor = new javax.swing.JRadioButton();
+        rbnAddWasp = new javax.swing.JRadioButton();
+        rbnAddSpider = new javax.swing.JRadioButton();
+        rbnAddStone = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -40,25 +43,51 @@ public class CreateMazeView extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/util/MainViewTitle.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, 110));
 
-        btgEditOptions.add(rbnAddTargets);
-        rbnAddTargets.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
-        rbnAddTargets.setForeground(new java.awt.Color(254, 254, 254));
-        rbnAddTargets.setSelected(true);
-        rbnAddTargets.setText("Add Targets");
-        getContentPane().add(rbnAddTargets, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 660, 170, -1));
-
-        btgEditOptions.add(rbnAddBlocks);
-        rbnAddBlocks.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
-        rbnAddBlocks.setForeground(new java.awt.Color(254, 254, 254));
-        rbnAddBlocks.setText("Add Blocks");
-        getContentPane().add(rbnAddBlocks, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 660, -1, -1));
-
-        pnMaze.setOpaque(false);
         pnMaze.setLayout(new java.awt.GridLayout(8, 8));
         getContentPane().add(pnMaze, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, 490, 490));
 
         jLabel3.setText("jLabel3");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, -1, -1));
+
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btgEditOptions.add(rbnAddFloor);
+        rbnAddFloor.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        rbnAddFloor.setForeground(new java.awt.Color(254, 254, 254));
+        rbnAddFloor.setText("Add floor");
+        rbnAddFloor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbnAddFloorActionPerformed(evt);
+            }
+        });
+        jPanel1.add(rbnAddFloor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        btgEditOptions.add(rbnAddWasp);
+        rbnAddWasp.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        rbnAddWasp.setForeground(new java.awt.Color(254, 254, 254));
+        rbnAddWasp.setText("Add wasp");
+        rbnAddWasp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbnAddWaspActionPerformed(evt);
+            }
+        });
+        jPanel1.add(rbnAddWasp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, -1, -1));
+
+        btgEditOptions.add(rbnAddSpider);
+        rbnAddSpider.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        rbnAddSpider.setForeground(new java.awt.Color(254, 254, 254));
+        rbnAddSpider.setSelected(true);
+        rbnAddSpider.setText("Add Spider");
+        jPanel1.add(rbnAddSpider, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, -1));
+
+        btgEditOptions.add(rbnAddStone);
+        rbnAddStone.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        rbnAddStone.setForeground(new java.awt.Color(254, 254, 254));
+        rbnAddStone.setText("Add stone");
+        jPanel1.add(rbnAddStone, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 160, 170, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/util/CreateMazeBackground.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
@@ -66,6 +95,14 @@ public class CreateMazeView extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void rbnAddWaspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnAddWaspActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbnAddWaspActionPerformed
+
+    private void rbnAddFloorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnAddFloorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbnAddFloorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -110,8 +147,11 @@ public class CreateMazeView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     public javax.swing.JPanel pnMaze;
-    public javax.swing.JRadioButton rbnAddBlocks;
-    public javax.swing.JRadioButton rbnAddTargets;
+    public javax.swing.JRadioButton rbnAddFloor;
+    public javax.swing.JRadioButton rbnAddSpider;
+    public javax.swing.JRadioButton rbnAddStone;
+    public javax.swing.JRadioButton rbnAddWasp;
     // End of variables declaration//GEN-END:variables
 }

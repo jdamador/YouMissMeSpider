@@ -12,6 +12,8 @@ import app.model.Cell;
 public class MainView extends javax.swing.JFrame {
     private MainViewController mvController;
     public Cell[][] maze = new Cell[8][8];
+    public Cell wasp = null;
+    public Cell spider = null;
     /**
      * Creates new form MainView
      */
