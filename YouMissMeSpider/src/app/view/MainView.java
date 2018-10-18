@@ -20,6 +20,7 @@ public class MainView extends javax.swing.JFrame {
     public MainView() {
         initComponents();
         mvController = new MainViewController(this);
+        System.out.println("Holi");
     }
 
     /**

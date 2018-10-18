@@ -44,8 +44,10 @@ public class CreateMazeView extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/util/MainViewTitle.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, 110));
 
-        pnMaze.setLayout(new java.awt.GridLayout(8, 8));
-        getContentPane().add(pnMaze, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, 490, 490));
+        pnMaze.setMaximumSize(new java.awt.Dimension(403, 403));
+        pnMaze.setMinimumSize(new java.awt.Dimension(403, 403));
+        pnMaze.setLayout(new java.awt.GridLayout(7, 7));
+        getContentPane().add(pnMaze, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, 403, 403));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));

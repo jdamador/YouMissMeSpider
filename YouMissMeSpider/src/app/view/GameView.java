@@ -38,11 +38,11 @@ public class GameView extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pnMaze.setMaximumSize(new java.awt.Dimension(460, 460));
-        pnMaze.setMinimumSize(new java.awt.Dimension(460, 460));
-        pnMaze.setPreferredSize(new java.awt.Dimension(460, 460));
-        pnMaze.setLayout(new java.awt.GridLayout(8, 8));
-        getContentPane().add(pnMaze, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 120, -1, -1));
+        pnMaze.setMaximumSize(new java.awt.Dimension(403, 403));
+        pnMaze.setMinimumSize(new java.awt.Dimension(403, 403));
+        pnMaze.setPreferredSize(new java.awt.Dimension(403, 403));
+        pnMaze.setLayout(new java.awt.GridLayout(7, 7));
+        getContentPane().add(pnMaze, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 120, 403, 403));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/util/MainViewTitle.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, 80));

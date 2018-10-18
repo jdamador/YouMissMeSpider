@@ -36,13 +36,13 @@
     <Container class="javax.swing.JPanel" name="pnMaze">
       <Properties>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[460, 460]"/>
+          <Dimension value="[403, 403]"/>
         </Property>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[460, 460]"/>
+          <Dimension value="[403, 403]"/>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[460, 460]"/>
+          <Dimension value="[403, 403]"/>
         </Property>
       </Properties>
       <AuxValues>
@@ -50,13 +50,13 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="590" y="120" width="-1" height="-1"/>
+          <AbsoluteConstraints x="590" y="120" width="403" height="403"/>
         </Constraint>
       </Constraints>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
-        <Property name="columns" type="int" value="8"/>
-        <Property name="rows" type="int" value="8"/>
+        <Property name="columns" type="int" value="7"/>
+        <Property name="rows" type="int" value="7"/>
       </Layout>
     </Container>
     <Component class="javax.swing.JLabel" name="jLabel2">

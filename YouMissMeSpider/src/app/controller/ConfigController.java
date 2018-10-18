@@ -31,14 +31,15 @@ public class ConfigController implements ActionListener {
 
     private void generateMatrix() {
         int name=0;
-        mainView.maze=new Cell[8][8];
+        mainView.maze=new Cell[7][7];
         mainView.wasp=null;
         mainView.spider=null;
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 7; j++) {
                 mainView.maze[i][j] = new Cell();
+                mainView.maze[i][j].setText(""+name);
                 mainView.maze[i][j].name="Cell"+name;name++;
-                mainView.maze[i][j].setIcon(new ImageIcon("./src/app/util/wood.jpg"));
+                //mainView.maze[i][j].setIcon(new ImageIcon("./src/app/util/wood.jpg"));
                 mainView.maze[i][j].addActionListener((e) -> this.cellPressed(e));
                 createMaze.pnMaze.add(mainView.maze[i][j]);
             }
