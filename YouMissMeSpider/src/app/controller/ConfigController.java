@@ -19,6 +19,8 @@ public class ConfigController implements ActionListener {
     private CreateMazeView createMaze= new CreateMazeView();
     ConfigController(MainView mainView) {
         this.mainView=mainView;
+        this.mainView.spider=null;
+        this.mainView.wasp=null;
         generateMatrix();
         openCreateMaze();
         createMaze.btnBack.addActionListener(this);
@@ -31,15 +33,15 @@ public class ConfigController implements ActionListener {
 
     private void generateMatrix() {
         int name=0;
-        mainView.maze=new Cell[7][7];
+        mainView.maze=new Cell[9][9];
         mainView.wasp=null;
         mainView.spider=null;
-        for (int i = 0; i < 7; i++) {
-            for (int j = 0; j < 7; j++) {
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
                 mainView.maze[i][j] = new Cell();
-                mainView.maze[i][j].setText(""+name);
-                mainView.maze[i][j].name="Cell"+name;name++;
-                //mainView.maze[i][j].setIcon(new ImageIcon("./src/app/util/wood.jpg"));
+                //mainView.maze[i][j].setText(name+"");
+                mainView.maze[i][j].name="cell"+name;name++;
+                mainView.maze[i][j].setIcon(new ImageIcon("./src/app/util/wood.jpg"));
                 mainView.maze[i][j].addActionListener((e) -> this.cellPressed(e));
                 createMaze.pnMaze.add(mainView.maze[i][j]);
             }
@@ -66,7 +68,7 @@ public class ConfigController implements ActionListener {
                 mainView.wasp=null;
             else if(btnPussed.equals(mainView.spider))
                 mainView.spider=null;
-            btnPussed.setIcon(new ImageIcon("./src/app/util/stone.jpg"));
+            btnPussed.setIcon(new ImageIcon("./src/app/util/stone.png"));
             btnPussed.allow=false;
         }
         else if(createMaze.rbnAddWasp.isSelected()){

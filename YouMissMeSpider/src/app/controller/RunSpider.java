@@ -6,11 +6,13 @@
 package app.controller;
 
 import app.model.Cell;
+import app.model.Connection;
 import app.view.MainView;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -29,13 +31,16 @@ public class RunSpider implements Runnable{
     }
     public void StartMovement() throws InterruptedException{
         int index=0;
-        Thread.sleep(1000);
+        Thread.sleep(100);
         while(running){
             if(index<path.size()){
                 this.actual.setIcon(new ImageIcon("./src/app/util/wood.jpg"));
-                this.actual=path.get(index);
+                this.actual=path.get(index); index++;
                 setNewPosition(actual);
+                Thread.sleep(500);
             }else{
+                new Connection().clear();
+                JOptionPane.showMessageDialog(null, "Provecho!!!");
                 running=false;
                 break;
             }
@@ -51,7 +56,7 @@ public class RunSpider implements Runnable{
     }
 
     private void setNewPosition(Cell actual) {
-        actual.setIcon(new ImageIcon("./src/app/util/spider.jpg"));
+        actual.setIcon(new ImageIcon("./src/app/util/spider.png"));
         mainView.spider=actual;
     }
     

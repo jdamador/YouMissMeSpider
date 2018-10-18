@@ -21,14 +21,18 @@ import javax.swing.JOptionPane;
 public class GameController implements ActionListener{
     private MainView mainView;
     private RunSpider runSpider;
+    private Connection connect;
+    private Thread thread;
     private GameView game= new GameView();
     GameController(MainView mainView) {
         this.mainView=mainView;
+        connect = new Connection(mainView);
         openGameView();
+        
         
     }
     private void openGameView() {
-      if(mainView.maze==null){
+      if(mainView.maze==null||mainView.spider==null||mainView.wasp==null){
           JOptionPane.showMessageDialog(mainView, "¡Primero debe crear un laberinto!");
       }else{
       mainView.setVisible(false);
@@ -41,8 +45,9 @@ public class GameController implements ActionListener{
     }
 
     private void generateMatrix() {
-        for (int i = 0; i < 7; i++) {
-            for (int j = 0; j < 7; j++) {
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+               mainView.maze[i][j].addActionListener(null);
                game.pnMaze.add(mainView.maze[i][j]);
             }
         }
@@ -65,19 +70,18 @@ public class GameController implements ActionListener{
 
     private void startGame() {
         
-        Connection connect = new Connection(mainView);
-        Cell[] path= connect.getPath();
-        //runSpider= new RunSpider(mainView, searchButtons(path));
-        //runSpider.running=true;
-        //runSpider.run();
+        String[] path= connect.getPath();
+        runSpider= new RunSpider(mainView, searchButtons(path));
+        runSpider.running=true;
+        new Thread(runSpider).start();
     }
 
     private void changeTarget() {
         boolean flag =true;
         Random random = new Random();
         while(flag){
-            int row = random.nextInt(7);
-            int col = random.nextInt(7);
+            int row = random.nextInt(9);
+            int col = random.nextInt(9);
             if(mainView.maze[row][col].allow && mainView.maze[row][col]!=mainView.spider &&
                     mainView.maze[row][col]!=mainView.wasp)
             {
@@ -87,23 +91,16 @@ public class GameController implements ActionListener{
                 flag=false;
             }
         }
+        runSpider.running=false;
         startGame();
     }
-
-    private ArrayList<Cell> searchButtons(Cell[] path) {
+    private ArrayList<Cell> searchButtons(String[] path) {
         ArrayList<Cell> buttons= new ArrayList<Cell>();
-        int index=0;
-        for (int i = 0; i < 7; i++) {
-            for (int j = 0; j < 7; j++) {
-                if(mainView.maze[i][j].name.equals(path[index]))
-                {
-                    buttons.add(mainView.maze[i][j]);
-                    index++;
-                }
-            }
-        }
+        for (int k = 0; k < path.length; k++) 
+            for (int i = 0; i < 9; i++) 
+                for (int j = 0; j < 9; j++) 
+                    if(mainView.maze[i][j].name.equals(path[k]))
+                        buttons.add(mainView.maze[i][j]);
         return buttons;
     }
-
-   
 }

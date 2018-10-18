@@ -25,6 +25,7 @@ public class GameView extends javax.swing.JFrame {
     private void initComponents() {
 
         pnMaze = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         btnStartGame = new javax.swing.JButton();
         btnChange = new javax.swing.JButton();
@@ -38,11 +39,15 @@ public class GameView extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        pnMaze.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pnMaze.setMaximumSize(new java.awt.Dimension(403, 403));
         pnMaze.setMinimumSize(new java.awt.Dimension(403, 403));
-        pnMaze.setPreferredSize(new java.awt.Dimension(403, 403));
-        pnMaze.setLayout(new java.awt.GridLayout(7, 7));
-        getContentPane().add(pnMaze, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 120, 403, 403));
+        pnMaze.setPreferredSize(new java.awt.Dimension(517, 517));
+        pnMaze.setLayout(new java.awt.GridLayout(9, 9));
+        getContentPane().add(pnMaze, new org.netbeans.lib.awtextra.AbsoluteConstraints(557, 117, 520, 530));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/util/bambu.png"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 60, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/util/MainViewTitle.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, 80));
@@ -63,6 +68,11 @@ public class GameView extends javax.swing.JFrame {
         btnBack.setFont(new java.awt.Font("Hack", 1, 24)); // NOI18N
         btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 230, 40));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/util/GameBackground.jpg"))); // NOI18N
@@ -71,6 +81,10 @@ public class GameView extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,6 +134,7 @@ public class GameView extends javax.swing.JFrame {
     public javax.swing.JButton btnStartGame;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     public javax.swing.JPanel pnMaze;
     // End of variables declaration//GEN-END:variables
 }
