@@ -17,11 +17,15 @@ public class Connection {
     public Connection() {
        
     }
+    /***
+     * This method is in charge of create acts between each allow nodes.
+     * @return 
+     */
     public String[] getPath() {
         String queryPL= "consult('prolog.pl')";
         Query queryRest = new Query(queryPL);
         if(queryRest.hasSolution()){
-            for (int i = 0; i < 9; i++) {
+            for (int i = 0; i < 9; i++) 
                 for (int j = 0; j < 9; j++) {
                     if(mainView.maze[i][j].allow){
                         if(i+1<=8)
@@ -38,29 +42,47 @@ public class Connection {
                                 asociate(mainView.maze[i][j].name, mainView.maze[i][j-1].name);
                     }
                 }
-            }
         }
         return searchPath(mainView.spider.name, mainView.wasp.name);
     }
+    /***
+     * This method call a function in prolog that make a assert to 
+     * create acts
+     * @param A
+     * @param B 
+     */
     public void asociate(String A , String B){
           String queryPL= "addNode("+A+","+B+",1)";
           Query queryRest = new Query(queryPL);
           queryRest.hasSolution();
     }
+    /***
+     * This method call a prolog function that search the best path between 
+     * two points.
+     * @param spider
+     * @param wasp
+     * @return 
+     */
     private String[] searchPath(String spider, String wasp) {
-        
         String queryPL= "go("+spider+","+wasp+",X)";
         Query queryRest = new Query(queryPL);
         String path="";
         while(queryRest.hasNext())
             path=queryRest.nextSolution().get("X").toString();
-       
         return cleanPath(path);
     }
+    /***
+     * This method clear the string returned by prolog.
+     * It means that remove all unnecessary elements
+     * @param ruta
+     * @return 
+     */
     public String[] cleanPath(String ruta){
         return ruta.replace("[","").replace("|", "").replace("'", "").replace("]","").replace("(", "").replace(")", "").replace(" ","").split(",");
     }
-
+    /***
+     * This method remove all acts in prolog. 
+     */
     public void clear() {
         String queryPL= "consult('prolog.pl')";
         Query queryRest = new Query(queryPL);

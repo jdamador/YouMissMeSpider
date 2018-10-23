@@ -10,11 +10,9 @@ import app.view.MainView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
-import jdk.nashorn.internal.runtime.regexp.joni.Config;
 
 public class MainViewController implements ActionListener{
     private MainView mainView;
-    
     public MainViewController(MainView mainView) {
         this.mainView=mainView;
         addActionListener();

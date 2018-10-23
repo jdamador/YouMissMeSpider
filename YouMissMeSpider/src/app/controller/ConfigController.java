@@ -3,6 +3,7 @@
  * Author: Daniel Amador Salas
  * Version: 1.0
  * Date: October 16th
+ * Class: ConfigController -: this class manage the view components.
 \******************************************************************************/
 package app.controller;
 
@@ -17,6 +18,10 @@ import javax.swing.JButton;
 public class ConfigController implements ActionListener {
     private MainView mainView;
     private CreateMazeView createMaze= new CreateMazeView();
+    /**
+     * Controller: recibe an instance of mainView to work with their components.
+     * @param mainView 
+     */
     ConfigController(MainView mainView) {
         this.mainView=mainView;
         this.mainView.spider=null;
@@ -25,18 +30,24 @@ public class ConfigController implements ActionListener {
         openCreateMaze();
         createMaze.btnBack.addActionListener(this);
     }
-
+    /***
+     * OpenCreateMaze: this method is in carge of change the view.
+     */
     private void openCreateMaze() {
       mainView.setVisible(false);
       createMaze.setVisible(true);
     }
-
+    /***
+     * generateMatrix: this method is in charge to create the logic matrix for
+     * the game. It create instances of Cell(class that extends from JButton) 
+     * and add this new object into an array.
+     */
     private void generateMatrix() {
         int name=0;
         mainView.maze=new Cell[9][9];
         mainView.wasp=null;
         mainView.spider=null;
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < 9; i++) 
             for (int j = 0; j < 9; j++) {
                 mainView.maze[i][j] = new Cell();
                 //mainView.maze[i][j].setText(name+"");
@@ -45,8 +56,12 @@ public class ConfigController implements ActionListener {
                 mainView.maze[i][j].addActionListener((e) -> this.cellPressed(e));
                 createMaze.pnMaze.add(mainView.maze[i][j]);
             }
-        }
     }
+    /***
+     * CellPressed: this method is an action listener. It is in charge of set 
+     * the image acording with the radio button selected.
+     * @param e 
+     */
     public void cellPressed(ActionEvent e) {
         Cell btnPussed = (Cell) e.getSource();
         if(createMaze.rbnAddFloor.isSelected()){
@@ -74,21 +89,27 @@ public class ConfigController implements ActionListener {
         else if(createMaze.rbnAddWasp.isSelected()){
             if(btnPussed.allow && mainView.wasp==null){
                 btnPussed.setIcon(new ImageIcon("./src/app/util/wasp.png"));
-                 mainView.wasp=btnPussed;
+                mainView.wasp=btnPussed;
             }
-        }
+        }  
     }  
-
+    /***
+     * ActionPerformed: default method necesary if is implemented the class
+     * ActionListener.
+     * @param e 
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton btnPussed = (JButton) e.getSource();
         if(btnPussed.getText().equals("Back"))
             goBack();
     }
-
+    /***
+     * GoBack: this method is in charge of return to the last view.
+     */
     private void goBack() {
-         mainView.setVisible(true);
-      createMaze.setVisible(false);
+        mainView.setVisible(true);
+        createMaze.setVisible(false);
     }
          
 }
